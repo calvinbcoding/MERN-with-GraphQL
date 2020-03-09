@@ -35,7 +35,7 @@ graphql(
     `,
     rootValue
 ).then(
-    console.log
+    res => console.dir(res, { depth: null })
 ).catch(
     console.error
 )
