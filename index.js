@@ -1,7 +1,23 @@
 const { graphql, buildSchema } = require('graphql')
 
+const schema = buildSchema(`
+    type Query {
+        message: String
+    }
+`)
+
+const rootValue = {
+    message: () => 'GraphQL is up and running'
+}
+
 graphql(
     schema,
-    query,
+    `
+        {
+            message
+        }
+    `,
     rootValue
+).then(
+    res => console.log(res)
 )
