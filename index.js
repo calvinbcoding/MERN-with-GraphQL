@@ -3,13 +3,13 @@ const { graphql, buildSchema } = require('graphql')
 const db = {
     users: [
         { id: '1', email: 'calvinb@gmail.com', name: 'Calvin' },
-        { id: '2', email: 'alexis@gmail.com', name: 'Alexis' },
+        { id: '2', email: 'alexis@gmail.com', name: 'Alexis' }
     ]
 }
 
 const schema = buildSchema(`
     type Query {
-        users: User
+        users: [User!]!
     }
 
     type User {
@@ -21,14 +21,16 @@ const schema = buildSchema(`
 `)
 
 const rootValue = {
-    users: () =>
+    users: () => db.users
 }
 
 graphql(
     schema,
     `
         {
-            message
+            users {
+                email
+            }
         }
     `,
     rootValue
