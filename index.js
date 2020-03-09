@@ -1,13 +1,27 @@
 const { graphql, buildSchema } = require('graphql')
 
+const db = {
+    users: [
+        { id: '1', email: 'calvinb@gmail.com', name: 'Calvin' },
+        { id: '2', email: 'alexis@gmail.com', name: 'Alexis' },
+    ]
+}
+
 const schema = buildSchema(`
     type Query {
-        message: String
+        users: User
+    }
+
+    type User {
+        id: ID!
+        email: String!
+        name: String
+        imageURL: String
     }
 `)
 
 const rootValue = {
-    message: () => 'GraphQL is up and running'
+    users: () =>
 }
 
 graphql(
@@ -19,5 +33,7 @@ graphql(
     `,
     rootValue
 ).then(
-    res => console.log(res)
+    console.log
+).catch(
+    console.error
 )
