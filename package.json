@@ -1,0 +1,10 @@
+{
+  "name": "MERN-with-GraphQL",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Calvin Bruch <calvinbcoding@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "graphql": "^14.6.0"
+  }
+}
