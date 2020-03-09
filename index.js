@@ -4,8 +4,8 @@ const { buildSchema } = require('graphql')
 
 const db = {
     users: [
-        { id: '1', email: 'calvinb@gmail.com', name: 'Calvin' },
-        { id: '2', email: 'alexis@gmail.com', name: 'Alexis' }
+        { id: '1', email: 'calvinb@gmail.com', name: 'Calvin', imageURL: 'https://gravatar.com/...' },
+        { id: '2', email: 'alexis@gmail.com', name: 'Alexis', imageURL: 'https://gravatar.com/...' }
     ]
 }
 
@@ -39,19 +39,19 @@ app.listen(3000, () => console.log('Express server is up and listening on port 3
 
 // const { graphql, buildSchema } = require('graphql')
 
-graphql(
-    schema,
-    `
-        {
-            users {
-                id
-                email
-            }
-        }
-    `,
-    rootValue
-).then(
-    res => console.dir(res, { depth: null })
-).catch(
-    console.error
-)
+// graphql(
+//     schema,
+//     `
+//         {
+//             users {
+//                 id
+//                 email
+//             }
+//         }
+//     `,
+//     rootValue
+// ).then(
+//     res => console.dir(res, { depth: null })
+// ).catch(
+//     console.error
+// )
